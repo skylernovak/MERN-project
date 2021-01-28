@@ -1,3 +1,6 @@
 {
-    "mongoURI": "mongodb+srv://Skyler09:Skyler09@devconnector.oavty.mongodb.net/<dbname>?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://Skyler09:Skyler09@devconnector.oavty.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtSecret": "TheDarkTower",
+    "githubClientId": "71b45754522311d35f3f",
+    "githubSecret": "c809022a88e0df81caf74b17af091db0d8d12cd8"
 }

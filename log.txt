@@ -16,4 +16,34 @@ Mongo DB Atlas
   password: Skyler09
 created api paths for users, auth, profile, and posts
 able to use express-validator to validate POST requests made to api/users
-Stopped at 1.11
+will be using Json Web Tokens (jwt.io) after a user is authenticated to allow access to restricted areas
+research get vs post
+research async/await
+research how does jwt.verify work with my secret?
+May possibly be an error with how I deal with get github repos if username doesnt exist. rewatch last video in section 4
+Stopped at section 5
+
+
+
+
+<=== Misc. ===>
+
+-~- sample users -~-
+
+Name
+Email
+Password
+
+Blue Crew
+blue@crew.com
+blueboi
+
+john doe
+jdoe@gmail.com
+password
+
+
+
+
+
+

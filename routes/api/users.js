@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 const { check, validationResult } = require('express-validator');
 
-const User = require('../../models/user');
+const User = require('../../models/UserData');
 
 // @route       POST api/users
 // @desc        register user
@@ -58,9 +60,21 @@ router.post('/',[
          // await note: returns a promise. anything that returns a promise needs await, as we are using async/await
          await user.save();
 
-         // return json web token
-        res.send('User registered');
+         const payload = {
+             user: {
+                 id: user.id
+             }
+         }
 
+         jwt.sign(
+             payload,  
+             config.get('jwtSecret'),
+             { expiresIn: 360000},  // 3600 = 1 hr, reduce to this number before deploy. for debugging keep it high
+             (err, token) => {
+                 if(err) throw err;
+                 res.json({token});
+
+             });
      } catch (err) {
         console.err(err.message);
         res.status(500).send('Server error');
