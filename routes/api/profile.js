@@ -10,8 +10,8 @@ const request = require('request');
 const config = require('config');
 
 const Profile = require('../../models/Profile');
-//const profile = require('../../models/Profile');
 const User = require('../../models/UserData');
+const Posts = require('../../models/Posts');
 
 
 
@@ -162,11 +162,13 @@ router.get('/user/:user_id', async (req, res) => {
     }
 });
 
-// @route       DELETE api/profile/user/:user_id
+// @route       DELETE api/profile
 // @desc        Delete profile, user, and posts
 // @access      Private
 router.delete('/', auth, async (req, res) => {
     try {
+        // Remove user posts
+        await Posts.deleteMany({ user: req.user.id });
         // remove profile
         await Profile.findOneAndRemove({ user: req.user.id });
         // Remove user
@@ -178,7 +180,7 @@ router.delete('/', auth, async (req, res) => {
         console.error(err.message);
         res.status(500).send('Server Error');
     }
-});
+}); 
 
 // @route       PUT api/profile/experience
 // @desc        Add profile experience

@@ -24,7 +24,10 @@ May possibly be an error with how I deal with get github repos if username doesn
 Stopped at section 5
 
 
-
+1/30/21
+just finished section 7
+Need to relearn this section
+discusses reducers and actions. It works, mostly. I have some small errors and bugs hoever and I'm not sure why. 
 
 <=== Misc. ===>
 
