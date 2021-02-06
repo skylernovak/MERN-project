@@ -106,7 +106,7 @@ router.post('/',
             // if profile exists, update it
             if(profile) {
                 //Update
-                //Profile.set('userFindAndModify', false);  // I was getting mongoose decpreciation warnings, unless I added this line. The warnings seem to have disappeared now however. I'm not sure of the cause. Perhaps after fixing the error on the next line, it supressed the warning. 
+                //Profile.set('userFindAndModify', false);  // I was getting mongoose depreciation warnings, unless I added this line. The warnings seem to have disappeared now however. I'm not sure of the cause. Perhaps after fixing the error on the next line, it supressed the warning. 
                 profile = await Profile.findOneAndUpdate(   // !!! I had an error in my code. It wasn't returning the json profile. I was missing await on this line and it fixed it. 
                     { user: req.user.id }, 
                     { $set: profileFields },

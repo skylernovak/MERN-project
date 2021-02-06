@@ -6,7 +6,7 @@ import { register } from '../../actions/auth';
 import PropTypes from 'prop-types'
 // import axios from 'axios';
 
-const Register = ({ setAlert, registe, isAuthenticated }) => {                // destructure setAlert from props
+const Register = ({ setAlert, register, isAuthenticated }) => {                // destructure setAlert from props
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -92,7 +92,8 @@ Register.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    register: PropTypes.func.isRequired
 });
 
 // we need to export connect, with the setAlert action in order to use it. Now available in Props.
