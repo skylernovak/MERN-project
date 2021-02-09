@@ -1,6 +1,6 @@
-module.exports = {
+{
     "mongoURI": "mongodb+srv://Skyler09:Skyler09@devconnector.oavty.mongodb.net/<dbname>?retryWrites=true&w=majority",
     "jwtSecret": "TheDarkTower",
     "githubClientId": "71b45754522311d35f3f",
     "githubSecret": "b57c3485c7c97a444063227e7aad0c6bf1c6f72e"
-};
+}
